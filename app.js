@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const app = express();
 app.set('view engine', 'ejs');
 
+// Get the day
 app.get("/", function(req,res) {
     let day = "";
     let today = new Date();
