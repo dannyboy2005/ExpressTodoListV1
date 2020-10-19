@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-  </head>
-  <body>
-    <h1>Its a <%= kindOfDay %>!</h1>
-  </body>
-</html>
+<%- include("header") -%>
+    <div class="box" id="heading">
+      <h1><%= listTitle %></h1>
+    </div>
+
+    <div class="box">
+      <% for(let i = 0; i < newListItems.length; i++) { %>
+      <div class="item">
+        <input type="checkbox" />
+        <p><%= newListItems[i] %></p>
+      </div>
+      <%} %>
+
+      <form class="item" action="/" method="POST">
+        <input
+          placeholder="Add New Item"
+          type="text"
+          name="newItem"
+          autocomplete="off"
+        />
+        <button name="list" type="submit" value=<%= listTitle %>
+          >+
+        </button>
+      </form>
+    </div>
+
+    <%- include("footer") -%>
